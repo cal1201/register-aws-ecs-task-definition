@@ -44,7 +44,7 @@ jobs:
             buildx-cache-
       
       - name: Build Test Image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           builder: ${{ steps.buildx.output.name }}
           context: .
@@ -99,7 +99,7 @@ jobs:
 
       - name: Load Testing Image
         id: load_test_image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
@@ -149,7 +149,7 @@ jobs:
 
       - name: Build Releaseable Image
         id: build_releaseable_image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
@@ -210,7 +210,7 @@ jobs:
 
       - name: Load Releaseable Image
         id: load_releaseable_image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
