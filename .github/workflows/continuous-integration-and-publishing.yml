@@ -160,4 +160,6 @@ jobs:
       - name: Publish Package
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: docker compose -f docker-compose.yml -f ci-compose.yml run --rm publisher
+        run: |
+          VERSION="${{ github.event.release.tag_name }}"
+          PACKAGE_VERSION="${VERSION#v}" docker compose -f docker-compose.yml -f ci-compose.yml run --rm publisher

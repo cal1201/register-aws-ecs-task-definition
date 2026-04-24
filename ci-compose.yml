@@ -26,6 +26,6 @@ services:
     build:
       <<: *lib_build
       target: release
-    command: yarn publish --non-interactive --access public
+    command: yarn publish --non-interactive --no-git-tag-version --access public --new-version ${PACKAGE_VERSION}
     environment:
       NPM_AUTH_TOKEN: ${NPM_AUTH_TOKEN}
