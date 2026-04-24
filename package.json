@@ -1,6 +1,6 @@
 {
   "name": "@cal1201/register-aws-ecs-task-definition",
-  "version": "0.0.14",
+  "version": "0.0.0",
   "description": "Registers a Task Definition in AWS ECS",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
