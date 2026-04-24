@@ -121,9 +121,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
 
       - name: Run Tests
-        uses: icalia-actions/run-ci-compose@v0.0.2
-        with:
-          service-name: tests
+        run: docker compose -f docker-compose.yml -f ci-compose.yml run --rm tests
 
   release_build:
     name: Build Release
