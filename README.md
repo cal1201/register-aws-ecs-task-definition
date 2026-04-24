@@ -6,7 +6,7 @@ Registers a Task Definition in AWS ECS
 
 ```yaml
       - name: Register AWS ECS Task Definition
-        uses: icalia-actions/register-aws-ecs-task-definition@v0.0.1
+        uses: cal1201/register-aws-ecs-task-definition@v0.0.1
         with:
           family: my-task-definition-family
           template: templates/ecs/my-task-definition.yml
@@ -30,5 +30,5 @@ Registers a Task Definition in AWS ECS
 ## Library Usage
 
 ```
-yarn add --dev @icalialabs/register-aws-ecs-task-definition
+yarn add --dev @cal1201/register-aws-ecs-task-definition
 ```

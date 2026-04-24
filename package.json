@@ -1,5 +1,5 @@
 {
-  "name": "@icalialabs/register-aws-ecs-task-definition",
+  "name": "@cal1201/register-aws-ecs-task-definition",
   "version": "0.0.14",
   "description": "Registers a Task Definition in AWS ECS",
   "main": "lib/main.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/icalia-actions/register-aws-ecs-task-definition.git"
+    "url": "git+https://github.com/cal1201/register-aws-ecs-task-definition.git"
   },
   "keywords": [
     "actions",
@@ -24,7 +24,7 @@
     "build",
     "push"
   ],
-  "author": "Icalia Labs",
+  "author": "Callum Everatt",
   "contributors": [
     {
       "name": "Vov",

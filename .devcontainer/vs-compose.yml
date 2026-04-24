@@ -7,7 +7,7 @@ volumes:
 
 services:
   lib:
-    image: icalia-actions/register-aws-ecs-task-definition:development
+    image: cal1201/register-aws-ecs-task-definition:development
     build:
       context: .
       dockerfile: Dockerfile

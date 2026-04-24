@@ -21,7 +21,7 @@ export interface TaskDefinitionContainerImageOverride {
 
 function getClient(): ECS {
   return new ECS({
-    customUserAgent: "icalia-actions/aws-action",
+    customUserAgent: "cal1201/aws-action",
     region: process.env.AWS_DEFAULT_REGION,
   });
 }

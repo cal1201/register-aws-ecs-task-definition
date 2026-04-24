@@ -16,7 +16,7 @@ RUN apt-get update \
    git
 
 # Receive the APP_PATH argument:
-ARG APP_PATH=/icalia-actions/register-aws-ecs-task-definition
+ARG APP_PATH=/cal1201/register-aws-ecs-task-definition
 
 # Receive the developer user's UID and USER:
 ARG DEVELOPER_UID=1000
@@ -49,7 +49,7 @@ ENV PATH=${APP_PATH}/node_modules/.bin:$PATH
 FROM testing AS development
 
 # Receive the APP_PATH argument:
-ARG APP_PATH=/icalia-actions/register-aws-ecs-task-definition
+ARG APP_PATH=/cal1201/register-aws-ecs-task-definition
 
 # Receive the developer user's UID and USER:
 ARG DEVELOPER_UID=1000
@@ -104,7 +104,7 @@ RUN mkdir -p ~/.vscode-server/extensions ~/.vscode-server-insiders/extensions
 # Stage IV: Builder ============================================================
 FROM testing AS builder
 
-ARG APP_PATH=/icalia-actions/register-aws-ecs-task-definition
+ARG APP_PATH=/cal1201/register-aws-ecs-task-definition
 ARG DEVELOPER_UID=1000
 
 COPY --chown=${DEVELOPER_UID} . ${APP_PATH}/
@@ -114,6 +114,6 @@ RUN rm -rf .env .npmignore __test__ action.yml bin ci-compose.yml coverage src t
 
 # Stage V: Release =============================================================
 FROM runtime AS release
-ARG APP_PATH=/icalia-actions/register-aws-ecs-task-definition
-COPY --from=builder --chown=node:node ${APP_PATH} /icalia-actions/register-aws-ecs-task-definition
-WORKDIR /icalia-actions/register-aws-ecs-task-definition
+ARG APP_PATH=/cal1201/register-aws-ecs-task-definition
+COPY --from=builder --chown=node:node ${APP_PATH} /cal1201/register-aws-ecs-task-definition
+WORKDIR /cal1201/register-aws-ecs-task-definition

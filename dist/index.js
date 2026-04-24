@@ -117,7 +117,7 @@ const yaml_1 = __nccwpck_require__(8815);
 const ecs_1 = __importDefault(__nccwpck_require__(950));
 function getClient() {
     return new ecs_1.default({
-        customUserAgent: "icalia-actions/aws-action",
+        customUserAgent: "cal1201/aws-action",
         region: process.env.AWS_DEFAULT_REGION,
     });
 }

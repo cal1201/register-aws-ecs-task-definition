@@ -7,7 +7,7 @@ volumes:
 
 services:
   tests: &lib
-    image: icalia-actions/register-aws-ecs-task-definition:testing-latest
+    image: cal1201/register-aws-ecs-task-definition:testing-latest
     build: &lib_build
       target: testing
       context: .
@@ -22,7 +22,7 @@ services:
 
   publisher:
     <<: *lib
-    image: icalia-actions/register-aws-ecs-task-definition:latest
+    image: cal1201/register-aws-ecs-task-definition:latest
     build:
       <<: *lib_build
       target: release
