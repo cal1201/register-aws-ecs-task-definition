@@ -5,6 +5,17 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    ignore:
+      # These packages went ESM-only in their 2.x/7.x majors. This repo is CJS
+      # (bundled via ncc) and consumes aws-sdk v2 which is also CJS, so we
+      # can't cross the ESM boundary without a broader rewrite. Revisit when
+      # migrating to aws-sdk v3 + ESM.
+      - dependency-name: "@actions/core"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@actions/exec"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@actions/github"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
