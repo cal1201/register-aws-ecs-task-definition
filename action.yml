@@ -1,4 +1,4 @@
-name: Register AWS ECS Task Definition
+name: Register ECS Task Definition
 description: Registers a Task Definition in AWS ECS
 author: Callum Everatt
 
