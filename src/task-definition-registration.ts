@@ -26,6 +26,19 @@ function getClient(): ECS {
   });
 }
 
+// Fields present in DescribeTaskDefinition output but rejected by
+// RegisterTaskDefinition. Strip them so users can pipe describe output
+// straight into a template file.
+const RESPONSE_ONLY_FIELDS = [
+  "taskDefinitionArn",
+  "revision",
+  "status",
+  "requiresAttributes",
+  "compatibilities",
+  "registeredAt",
+  "registeredBy",
+] as const;
+
 function readTaskDefinitionTemplate(
   input: TaskRegistrationInput
 ): RegisterTaskDefinitionRequest | undefined {
@@ -33,7 +46,11 @@ function readTaskDefinitionTemplate(
   if (!template || !fs.existsSync(template)) return;
 
   const templateContents = fs.readFileSync(template, "utf8");
-  return parse(templateContents);
+  const parsed = parse(templateContents);
+  if (!parsed) return;
+
+  for (const field of RESPONSE_ONLY_FIELDS) delete parsed[field];
+  return parsed;
 }
 
 function overrideContainerImages(
