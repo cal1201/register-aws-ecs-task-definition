@@ -34,7 +34,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v5
         with:
           path: /tmp/.buildx-cache
           key: buildx-cache-${{ github.head_ref || github.ref }}-${{ github.sha }}
@@ -88,7 +88,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v5
         with:
           path: /tmp/.buildx-cache
           key: buildx-cache-${{ github.head_ref || github.ref }}-${{ github.sha }}
@@ -138,7 +138,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v5
         with:
           path: /tmp/.buildx-cache
           key: buildx-cache-${{ github.head_ref || github.ref }}-${{ github.sha }}
@@ -199,7 +199,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v5
         with:
           path: /tmp/.buildx-cache
           key: buildx-cache-${{ github.head_ref || github.ref }}-${{ github.sha }}
