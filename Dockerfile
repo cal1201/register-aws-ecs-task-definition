@@ -1,5 +1,5 @@
 # Stage I: Runtime  ============================================================
-FROM node:22-bookworm-slim AS runtime
+FROM node:26-bookworm-slim AS runtime
 
 RUN echo 'APT::Acquire::Retries "3";' > /etc/apt/apt.conf.d/80-retries \
  && apt-get update \
